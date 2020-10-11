@@ -92,7 +92,6 @@ void pwm(int pin,int num){
 }
 int main(void)
 {
-    int i=0;
     while(1)
     {
 		int x=rand();
