@@ -45,7 +45,6 @@ void servo(int pin, int angle){      //prescalar was 64, so pwm freq is 9.6MHz/(
 	
 int main(void)
 {
-	int i=0;
     while(1)
     {
 		for(int i=0;i<=180;i++){
