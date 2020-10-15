@@ -39,7 +39,7 @@ void pwm(int pin,int num){
 	}				
 }
 
-void servo(int pin, int angle){      //prescalar was 64, so pwm freq is 9.6MHz/(256*64)=58.6hz.
+void servo(int pin, int angle){      //prescalar was 64, so pwm freq is 9.6MHz/(256*64)=586hz.
 	pwm(pin,(int)angle*0.2);  //180deg -> 36, so 36/180=0.2
 }	
 	
