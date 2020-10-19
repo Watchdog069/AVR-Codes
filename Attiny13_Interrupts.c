@@ -44,7 +44,6 @@ void setupADC(int x){
 			ADMUX=0x40;				
 	}
 	ADCSRA |= 1<<ADSC; //START CONVERSION
-	sei();  //enable interrupts
 }
 
 
@@ -64,6 +63,7 @@ ISR(INT0_vect){  //ISR
 
 int main(void)
 {
+	sei();  //enable interrupts
 	setPin(3,1);  //pump as output(pb3)
 	setPin(2,1);  //buzzer as o/p (pb2)
 	setPin(0,1);  //led lights as o/p (pb0)
