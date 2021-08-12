@@ -11,6 +11,8 @@
 
 int calculateADC();
 void setupADC(int x);
+void setPin(char port,int pin,int state);
+void digitalWrite(char port,int pin,int state);
 
 void setupADC(int x){
 	ADCSRA |= (1<<ADEN)|(1<<ADATE)|(1<<ADIE)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0); //free running, 128 PRESCALAR
@@ -56,7 +58,7 @@ int calculateADC(){
 }
 
 ISR(ADC_vect){
-	if(calculateADC() > 500){
+	if(calculateADC() > 700){
 		digitalWrite('B',7,1); 
 		_delay_ms(1000);
 		digitalWrite('B',7,0);	
@@ -133,8 +135,8 @@ int main(void)
 {
 	setPin('B',7,1);
 	setupADC(0);
-    while(1)
-    {
+	while(1)
+	{
 		digitalWrite('B',7,0);	
-    }	
+	}	
 }
